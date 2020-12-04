@@ -38,6 +38,7 @@ public class PolymoPhism {
 	
 	public static void main(String[] args) {
 		
+		
 		PolymoPhism test = new PolymoPhism();
 		test.moveAnimal(new Human());
 		test.moveAnimal(new Tiger());
@@ -46,6 +47,7 @@ public class PolymoPhism {
 
 	}
 	
+	//instanceof
 	public void moveAnimal(Animal animal) {
 		animal.move();
 		
