@@ -1,4 +1,4 @@
-package javaBasic;
+package javaBasicOfBasic;
 
 public class FlowControl {
 
