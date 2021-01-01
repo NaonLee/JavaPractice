@@ -1,4 +1,4 @@
-package triangle.tree;
+package triangle;
 
 import java.util.Scanner;
 
