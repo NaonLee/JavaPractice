@@ -4,11 +4,13 @@ import java.util.Scanner;
 
 //Diamond using variables
 //1-1: fixed height
-//1-2: require entering number as a height
+//1-2: require entering number as a height + use variables(st, ed)
+//1-2: require entering number as a height + use variables(st, ed) 2
 public class Diamond_1 {
 	public static void main(String[] args){
 		diamond_1_1();
 		diamond_1_2();
+		diamond_1_3();
 	}
 	
 	public static void diamond_1_1() {
@@ -70,6 +72,48 @@ public class Diamond_1 {
 				System.out.println();
 			}
 			
+		}
+	}
+	
+	public static void diamond_1_3() {
+		Scanner sc = new Scanner(System.in);
+		int height = 1;
+		int st, ed;
+
+		for(;;) {
+			System.out.print("출력할 줄 수 입력(홀수만 입력하되 끝내려면 '0'입력): ");
+			height = sc.nextInt();
+			if(height == 0) {
+				sc.close();
+				break;
+			}
+			else if (height % 2 == 1) {
+
+				int middle = height / 2 + 1;
+				System.out.println();
+
+				for (int i = 1; i <= height; i++) {
+					if( i <= middle) {
+						st = middle + 1 - i;
+						ed = i + middle - 1;
+					} else {
+						st = i - (middle - 1);
+						ed = height + middle -i;
+					}
+					
+					for(int j = 1; j <= ed; j++) {
+						if(j < st)
+							System.out.print(" ");
+						else {
+
+							System.out.print("*");
+						}
+					}
+					System.out.println();
+				}
+				
+			}
+
 		}
 	}
 }
