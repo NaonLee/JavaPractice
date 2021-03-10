@@ -3,7 +3,7 @@ package digit;
 import java.util.Scanner;
 
 //Sum digits of number
-public class SumDigitOfNums {
+public class SumDigitsOfNum {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
