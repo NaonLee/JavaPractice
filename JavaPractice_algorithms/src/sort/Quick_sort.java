@@ -16,7 +16,7 @@ public class Quick_sort {
 		
 		System.out.println(quickSort(list));
 	}
-
+ 
 	public static List<Integer> quickSort(List<Integer> list){
 		List<Integer> finalList = new ArrayList<Integer>();
 		List<Integer> lowerList = new ArrayList<Integer>();
