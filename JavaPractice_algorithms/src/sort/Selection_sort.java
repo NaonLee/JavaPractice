@@ -1,57 +1,36 @@
 package sort;
 
+import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Selection_sort {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int[] selectionSort = {22,15,63,122,64,5,64,88,1};
-		int value;		//search value
-		int first = 0, last = selectionSort.length-1;
-		int finding = -1;
-		
-		for(int i = 0, t; i < selectionSort.length; i++) {
-			for(int j = i+1; j < selectionSort.length; j++) {
-				if(selectionSort[i] > selectionSort[j]) {
-					t = selectionSort[i];
-					selectionSort[i] = selectionSort[j];
-					selectionSort[j] = t;
-				}
-			}
+		Random random = new Random();
+		int arr[] = new int[10];
+		for(int i=0; i<arr.length; i++) {
+			arr[i] = random.nextInt(101);
 		}
-		
-		for (int i : selectionSort) {
-			System.out.print(i+" ");
-		}
-		System.out.println();
-		
-		System.out.print("Search value: ");
-		value = sc.nextInt();
-		
-		finding = binary(selectionSort, value, first, last);
-		
-		if(finding == -1) System.out.print("There is no such value");
-		else System.out.printf("Value %d's index is %d in selectionSort", value, finding+1);
 
-		
+		selection_sort(arr);
 	}
 	
-	static int binary(int[] arr, int value, int first, int last) {
-		int middle;
+	public static void selection_sort(int[] arr) {
+		System.out.println("Orginal array: " + Arrays.toString(arr));
 		
-		if(first > last) return -1;
+		int min, temp;
 		
-		middle = (first + last) /2;
-		
-		if(value == arr[middle]) {
-			return middle;
-		} else if(value < arr[middle]) {
-			last = middle - 1;
-		} else {
-			first = middle + 1;
+		for(int i=0; i<arr.length; i++) {				//find lowest value
+			min = i;
+			for(int j=i+1; j<arr.length; j++) {
+				if(arr[min] > arr[j])
+					min = j;
+			}
+		temp = arr[i];
+		arr[i] = arr[min];
+		arr[min] = temp;
 		}
-		return binary(arr, value, first, last);
+		System.out.println("Sorted result: " + Arrays.toString(arr));
 	}
-	
 }
